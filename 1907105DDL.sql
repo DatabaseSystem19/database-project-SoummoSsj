@@ -59,6 +59,7 @@ Buyer_ID number(30) NOT NULL CHECK (Buyer_ID >0),
 order_id number(30) NOT NULL CHECK (Order_ID >0),
 Payment_ID varchar(40) NOT NULL ,
 Payment_Date date  ,
+foreign key (buyer_ID) references buyerinfo(buyer_id) on delete cascade,
 foreign key (order_ID,Payment_ID) references Payment(order_ID,Payment_ID) on delete cascade
 );
 
